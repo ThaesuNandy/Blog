@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+	</title>
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<button class="start">Start</button>
+	<div class="blog_form">
+		<h1>BLOG FORM</h1>
+		<input type="" placeholder="Enter Title" name="">
+		<textarea placeholder="Enter Description" rows="8"></textarea>
+		<button class="create">Create</button>
+	</div>
+	<div class="blog">
+		
+	</div>
+	<script type="text/javascript">
+		$('.start').click(function(){
+			$('.blog_form').slideToggle()
+		})
+		$('.create').click(function(){
+			var title=$('input').val();
+			var description=$('textarea').val();
+			 $('.blog').append('<div><span>&times;</span><h2>'+title+'</h2><p>'+description+'</p></div>');
+            
+            
+		
+			$('input,textarea').val("")
+			$('span').click(function(){
+				$(this).parent().hide()
+			})
+		})
+	</script>
+</body>
+</html>
